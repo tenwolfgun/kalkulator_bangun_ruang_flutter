@@ -4,31 +4,31 @@
         "nama" : "Kubus"
     },
     {
-        "img"  : "img/kubus.png",
+        "img"  : "img/balok.png",
         "nama" : "Balok"
     },
     {
-        "img"  : "img/kubus.png",
+        "img"  : "img/limas-segiempat.png",
         "nama" : "Limas Segiempat"
     },
     {
-        "img"  : "img/kubus.png",
+        "img"  : "img/prisma-segitiga.png",
         "nama" : "Prisma Segitiga"
     },
     {
-        "img"  : "img/kubus.png",
+        "img"  : "img/limas-segitiga.png",
         "nama" : "Limas Segitiga"
     },
     {
-        "img"  : "img/kubus.png",
+        "img"  : "img/tabung.png",
         "nama" : "Tabung"
     },
     {
-        "img"  : "img/kubus.png",
+        "img"  : "img/kerucut.png",
         "nama" : "Kerucut"
     },
     {
-        "img"  : "img/kubus.png",
+        "img"  : "img/bola.png",
         "nama" : "Bola"
     }
 ]

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './kubus.dart' as vlKubus;
+import './kubus_volume_luas.dart' as vlKubus;
+import './kubus_keliling_luas_sisi.dart' as klKubus;
 
 class NavKubus extends StatelessWidget {
   @override
@@ -32,7 +33,7 @@ class NavKubus extends StatelessWidget {
                 title: Text("Keliling dan Luas Salah Satu Sisi Kubus", style: TextStyle(fontSize: 20.0),),
                 onTap: () {
                   Route route = MaterialPageRoute(
-                    builder: (context) => vlKubus.Kubus()
+                    builder: (context) => klKubus.Kubus()
                   );
                   Navigator.push(context, route);
                 },
