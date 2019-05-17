@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import './kubus/kubus_volume_luas.dart' as vlKubus;
-import './kubus/kubus_keliling_luas_sisi.dart' as klKubus;
+import './prisma_segitiga/volume_prisma_segitiga.dart' as vlPrismaSegitiga;
+import './prisma_segitiga/luas_permukaan_prisma_segitigas.dart' as lsPermukaanSegitiga;
 
-class NavKubus extends StatelessWidget {
+class NavPrismaSegitiga extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         centerTitle: true,
-        title: new Text("Kalkulator Bangun Ruang - Kubus"),
+        title: new Text("Kalkulator Bangun Ruang - Prisma Segitiga"),
       ),
       body: new Container(
         padding: EdgeInsets.all(10.0),
@@ -17,23 +17,23 @@ class NavKubus extends StatelessWidget {
             Card(
               child: ListTile(
                   leading: Image.asset(
-                    "img/kubus.png",
+                    "img/prisma-segitiga.png",
                     width: 50.0,
                   ),
-                  title: Text("Volume dan Luas Permukaan Kubus", style: TextStyle(fontSize: 20.0),),
+                  title: Text("Volume Prisma Segitiga", style: TextStyle(fontSize: 20.0),),
                   onTap: () {
                     Route route = MaterialPageRoute(
-                        builder: (context) => vlKubus.Kubus());
+                        builder: (context) => vlPrismaSegitiga.PrismaSegitiga());
                     Navigator.push(context, route);
                   }),
             ),
             Card(
               child: ListTile(
-                leading: Image.asset("img/kubus.png", width: 50.0,),
-                title: Text("Keliling dan Luas Salah Satu Sisi Kubus", style: TextStyle(fontSize: 20.0),),
+                leading: Image.asset("img/prisma-segitiga.png", width: 50.0,),
+                title: Text("Luas Permukaan Prisma Segitiga", style: TextStyle(fontSize: 20.0),),
                 onTap: () {
                   Route route = MaterialPageRoute(
-                    builder: (context) => klKubus.Kubus()
+                    builder: (context) => lsPermukaanSegitiga.PrismaSegitiga()
                   );
                   Navigator.push(context, route);
                 },

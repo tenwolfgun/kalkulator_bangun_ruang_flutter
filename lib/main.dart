@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import './view/nav_kubus.dart' as halKubus;
+import './view/nav_balok.dart' as halBalok;
+import './view/nav_prisma_segitiga.dart' as halPrismaSegitiga;
 // import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
 void main() {
@@ -9,7 +11,9 @@ void main() {
     home: new Home(),
     routes: <String, WidgetBuilder> {
       '/HalamanUtama': (BuildContext context) => new Home(),
-      '/HalamanKubus': (BuildContext context) => new halKubus.NavKubus()
+      '/HalamanKubus': (BuildContext context) => new halKubus.NavKubus(),
+      '/HalamanBalok': (BuildContext context) => new halBalok.NavBalok(),
+      '/HalamanPrismaSegitiga': (BuildContext context) => new halPrismaSegitiga.NavPrismaSegitiga()
     }
   ));
 }
@@ -61,7 +65,11 @@ class _HomeState extends State<Home> {
                   onTap: () {
                     if (post['nama'] == "Kubus") {
                       Navigator.pushNamed(context, '/HalamanKubus');
-                    } else {
+                    } else if (post['nama'] == "Balok"){
+                      Navigator.pushNamed(context, '/HalamanBalok');
+                    } else if (post['nama'] == "Prisma Segitiga") {
+                      Navigator.pushNamed(context, '/HalamanPrismaSegitiga');
+                    }else {
                       print("not found");
                     }
                   },
