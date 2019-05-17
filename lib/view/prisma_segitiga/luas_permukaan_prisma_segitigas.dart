@@ -90,9 +90,9 @@ class _PrismaSegitigaState extends State<PrismaSegitiga> {
                   ),
                 ],
               ),
-            Row(
-              children: <Widget>[
-                Expanded(
+              Row(
+                children: <Widget>[
+                  Expanded(
                     child: Padding(
                       padding: EdgeInsets.only(right: 10.0),
                       child: TextField(
@@ -118,8 +118,8 @@ class _PrismaSegitigaState extends State<PrismaSegitiga> {
                       ),
                     ),
                   ),
-              ],
-            ),
+                ],
+              ),
               Padding(
                 padding: EdgeInsets.only(top: 10.0),
                 child: RaisedButton(
