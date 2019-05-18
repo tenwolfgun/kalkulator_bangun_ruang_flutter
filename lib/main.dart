@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
+// import 'package:flutter/cupertino.dart';
 import './view/nav_kubus.dart' as halKubus;
 import './view/nav_balok.dart' as halBalok;
 import './view/nav_prisma_segitiga.dart' as halPrismaSegitiga;
+import './view/nav_limas_segiempat.dart' as halLimasSegiempat;
+import './view/animation.dart' as animRoute;
 // import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
 void main() {
   runApp(new MaterialApp(
     title: "Kalkulator Ruang dan Bangun",
     home: new Home(),
-    routes: <String, WidgetBuilder> {
-      '/HalamanUtama': (BuildContext context) => new Home(),
-      '/HalamanKubus': (BuildContext context) => new halKubus.NavKubus(),
-      '/HalamanBalok': (BuildContext context) => new halBalok.NavBalok(),
-      '/HalamanPrismaSegitiga': (BuildContext context) => new halPrismaSegitiga.NavPrismaSegitiga()
-    }
+    theme: new ThemeData(
+      primarySwatch: Colors.blue,
+    ),
+    // routes: <String, WidgetBuilder> {
+    //   '/HalamanUtama': (BuildContext context) => new Home(),
+    //   '/HalamanKubus': (BuildContext context) => new halKubus.NavKubus(),
+    //   '/HalamanBalok': (BuildContext context) => new halBalok.NavBalok(),
+    //   '/HalamanPrismaSegitiga': (BuildContext context) => new halPrismaSegitiga.NavPrismaSegitiga()
+    // }
   ));
 }
 
@@ -24,6 +30,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  final goToKubus = halKubus.NavKubus();
+  final goToBalok = halBalok.NavBalok();
+  final goToPrismaSegitiga = halPrismaSegitiga.NavPrismaSegitiga();
+  final goToLimasSegiempat = halLimasSegiempat.NavLimasSegiempat();
 
   List<String> data;
 
@@ -64,11 +75,13 @@ class _HomeState extends State<Home> {
                 return GestureDetector(
                   onTap: () {
                     if (post['nama'] == "Kubus") {
-                      Navigator.pushNamed(context, '/HalamanKubus');
+                      Navigator.push(context, animRoute.CustomPageRoute(goToKubus));
                     } else if (post['nama'] == "Balok"){
-                      Navigator.pushNamed(context, '/HalamanBalok');
+                      Navigator.push(context, animRoute.CustomPageRoute(goToBalok));
                     } else if (post['nama'] == "Prisma Segitiga") {
-                      Navigator.pushNamed(context, '/HalamanPrismaSegitiga');
+                      Navigator.push(context, animRoute.CustomPageRoute(goToPrismaSegitiga));
+                    } else if (post['nama'] == "Limas Segiempat") {
+                      Navigator.push(context, animRoute.CustomPageRoute(goToLimasSegiempat));
                     }else {
                       print("not found");
                     }
@@ -76,7 +89,7 @@ class _HomeState extends State<Home> {
                   child: Container(
                     padding: EdgeInsets.all(10.0),
                     child: Card(
-                  elevation: 6.0,
+                  elevation: 8.0,
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.start,

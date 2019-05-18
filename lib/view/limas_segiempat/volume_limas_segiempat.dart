@@ -1,41 +1,39 @@
 import 'package:flutter/material.dart';
 
-class Balok extends StatefulWidget {
+class LimasSegiempat extends StatefulWidget {
   @override
-  _BalokState createState() => _BalokState();
+  _LimasSegiempatState createState() => _LimasSegiempatState();
 }
 
-class _BalokState extends State<Balok> {
-  TextEditingController _panjangController;
-  TextEditingController _lebarController;
+class _LimasSegiempatState extends State<LimasSegiempat> {
+
+  TextEditingController _sisiController;
   TextEditingController _tinggiController;
 
   @override
   void initState() {
-    _panjangController = TextEditingController();
-    _lebarController = TextEditingController();
+    _sisiController = TextEditingController();
     _tinggiController = TextEditingController();
     super.initState();
   }
 
   @override
   void dispose() {
-    _panjangController?.dispose();
-    _lebarController?.dispose();
+    _sisiController?.dispose();
     _tinggiController?.dispose();
     super.dispose();
   }
 
-  double _panjang = 0;
-  double _lebar = 0;
+  double _sisi = 0;
   double _tinggi = 0;
+  double _lsAlas = 0;
   double _volume = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Kalkulator Bangun Ruang - Balok"),
+        title: Text("Kalkulator Bangun Ruang - Limas Segiempat"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -46,17 +44,14 @@ class _BalokState extends State<Balok> {
               Padding(
                 padding: EdgeInsets.only(bottom: 30.0, top: 10.0),
                 child: Center(
-                  child: Image.asset(
-                    "img/balok.png",
-                    width: 100.0,
-                  ),
+                  child: Image.asset("img/limas-segiempat.png", width: 100.0),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                 child: Text(
-                  "Volume Balok",
-                  style: TextStyle(fontSize: 25.0),
+                  "Volume Limas Segiempat",
+                  style: TextStyle(fontSize: 25.0)
                 ),
               ),
               Row(
@@ -67,10 +62,10 @@ class _BalokState extends State<Balok> {
                       child: TextField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          labelText: "Panjang (P)",
+                          labelText: "Sisi"
                         ),
                         keyboardType: TextInputType.number,
-                        controller: _panjangController,
+                        controller: _sisiController,
                       ),
                     ),
                   ),
@@ -80,20 +75,7 @@ class _BalokState extends State<Balok> {
                       child: TextField(
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          labelText: "Lebar (L)",
-                        ),
-                        keyboardType: TextInputType.number,
-                        controller: _lebarController,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(right: 0.0),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: "Tinggi (T)",
+                          labelText: "Tinggi"
                         ),
                         keyboardType: TextInputType.number,
                         controller: _tinggiController,
@@ -108,10 +90,10 @@ class _BalokState extends State<Balok> {
                   child: Text("Hitung", style: TextStyle(fontSize: 15.0)),
                   onPressed: () {
                     setState(() {
-                      _panjang = double.parse(_panjangController.text);
-                      _lebar = double.parse(_lebarController.text);
-                      _tinggi = double.parse(_tinggiController.text);
-                      _volume = _panjang * _lebar * _tinggi;
+                     _sisi = double.parse(_sisiController.text);
+                     _tinggi = double.parse(_tinggiController.text);
+                     _lsAlas = _sisi * _sisi;
+                     _volume = 1/3 * _lsAlas * _tinggi;
                     });
                   },
                 ),
@@ -119,10 +101,8 @@ class _BalokState extends State<Balok> {
               Padding(
                 padding: EdgeInsets.only(bottom: 8.0, top: 8.0),
                 child: Text(
-                  "Volume balok : $_panjang * $_lebar * $_tinggi = $_volume",
-                  style: TextStyle(
-                    fontSize: 20.0,
-                  ),
+                  "Volume Limas Segiempat: 1/3 * $_lsAlas * $_tinggi = $_volume",
+                  style: TextStyle(fontSize: 20.0),
                 ),
               )
             ],

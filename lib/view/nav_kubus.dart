@@ -20,7 +20,10 @@ class NavKubus extends StatelessWidget {
                     "img/kubus.png",
                     width: 50.0,
                   ),
-                  title: Text("Volume dan Luas Permukaan Kubus", style: TextStyle(fontSize: 20.0),),
+                  title: Text(
+                    "Volume dan Luas Permukaan Kubus",
+                    style: TextStyle(fontSize: 20.0),
+                  ),
                   onTap: () {
                     Route route = MaterialPageRoute(
                         builder: (context) => vlKubus.Kubus());
@@ -29,12 +32,17 @@ class NavKubus extends StatelessWidget {
             ),
             Card(
               child: ListTile(
-                leading: Image.asset("img/kubus.png", width: 50.0,),
-                title: Text("Keliling dan Luas Salah Satu Sisi Kubus", style: TextStyle(fontSize: 20.0),),
+                leading: Image.asset(
+                  "img/kubus.png",
+                  width: 50.0,
+                ),
+                title: Text(
+                  "Keliling dan Luas Salah Satu Sisi Kubus",
+                  style: TextStyle(fontSize: 20.0),
+                ),
                 onTap: () {
-                  Route route = MaterialPageRoute(
-                    builder: (context) => klKubus.Kubus()
-                  );
+                  Route route =
+                      MaterialPageRoute(builder: (context) => klKubus.Kubus());
                   Navigator.push(context, route);
                 },
               ),

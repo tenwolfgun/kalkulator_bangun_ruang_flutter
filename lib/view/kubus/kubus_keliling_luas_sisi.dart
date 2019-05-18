@@ -9,17 +9,23 @@ class Kubus extends StatefulWidget {
 class _KubusState extends State<Kubus> {
   // FocusNode _sisiFocus;
 
-  // TextEditingController _sisiControll;
+  TextEditingController _rusukControll;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _sisiFocus = FocusNode();
-  //   _sisiFocus.addListener(() {
-  //     if (_sisiFocus.hasFocus) _sisiControll.clear();
-  //   });
-  //   // _sisiControll =  TextEditingController(text: "0");
-  // }
+  @override
+  void initState() {
+    super.initState();
+    //   _sisiFocus = FocusNode();
+    //   _sisiFocus.addListener(() {
+    //     if (_sisiFocus.hasFocus) _sisiControll.clear();
+    //   });
+    _rusukControll = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _rusukControll?.dispose();
+    super.dispose();
+  }
 
   double rusuk = 0;
   double keliling = 0;
@@ -57,8 +63,10 @@ class _KubusState extends State<Kubus> {
               Padding(
                   padding: EdgeInsets.only(bottom: 5.0),
                   child: Container(
-                    margin: EdgeInsets.all(30.0),
-                    padding: EdgeInsets.all(10.0),
+                    margin: EdgeInsets.only(
+                        top: 30.0, left: 30.0, right: 30.0, bottom: 10.0),
+                    padding:
+                        EdgeInsets.only(top: 10.0, left: 10.0, right: 10.0),
                     // decoration:  BoxDecoration(
                     //   border: Border.all(color: Colors.blue)
                     // ),
@@ -69,23 +77,37 @@ class _KubusState extends State<Kubus> {
                           border: OutlineInputBorder(),
                           labelText: "Rusuk Kubus"),
                       keyboardType: TextInputType.number,
-                      onChanged: (String str) {
-                        setState(() {
-                          rusuk = double.parse(str);
-                          keliling = 12 * rusuk;
-                          lsSisi = rusuk * rusuk;
-                        });
-                      },
+                      controller: _rusukControll,
+                      // onChanged: (String str) {
+                      //   setState(() {
+                      //     rusuk = double.parse(str);
+                      //     keliling = 12 * rusuk;
+                      //     lsSisi = rusuk * rusuk;
+                      //   });
+                      // },
                     ),
                   )),
+              RaisedButton(
+                child: Text(
+                  "Hitung",
+                  style: TextStyle(fontSize: 15.0),
+                ),
+                onPressed: () {
+                  setState(() {
+                    rusuk = double.parse(_rusukControll.text);
+                    keliling = 12 * rusuk;
+                    lsSisi = rusuk * rusuk;
+                  });
+                },
+              ),
               Padding(
                 padding: EdgeInsets.only(bottom: 8.0, top: 5.0),
-                child: Text("Keliling kubus = $keliling",
+                child: Text("Keliling kubus: 12 * $rusuk = $keliling",
                     style: TextStyle(fontSize: 20.0)),
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 8.0, top: 5.0),
-                child: Text("Luas salah satu sisi = $lsSisi",
+                child: Text("Luas salah satu sisi: $rusuk * $rusuk = $lsSisi",
                     style: TextStyle(fontSize: 20.0)),
               ),
               // Padding(
