@@ -5,6 +5,8 @@ import './view/nav_kubus.dart' as halKubus;
 import './view/nav_balok.dart' as halBalok;
 import './view/nav_prisma_segitiga.dart' as halPrismaSegitiga;
 import './view/nav_limas_segiempat.dart' as halLimasSegiempat;
+import './view/nav_limas_segitiga.dart' as halLimasSegitiga;
+import './view/nav_tabung.dart' as halTabung;
 import './view/animation.dart' as animRoute;
 // import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
@@ -35,6 +37,8 @@ class _HomeState extends State<Home> {
   final goToBalok = halBalok.NavBalok();
   final goToPrismaSegitiga = halPrismaSegitiga.NavPrismaSegitiga();
   final goToLimasSegiempat = halLimasSegiempat.NavLimasSegiempat();
+  final goToLimasSegitiga  = halLimasSegitiga.NavLimasSegitiga();
+  final goToTabung         = halTabung.NavTabung();
 
   List<String> data;
 
@@ -82,6 +86,10 @@ class _HomeState extends State<Home> {
                       Navigator.push(context, animRoute.CustomPageRoute(goToPrismaSegitiga));
                     } else if (post['nama'] == "Limas Segiempat") {
                       Navigator.push(context, animRoute.CustomPageRoute(goToLimasSegiempat));
+                    } else if (post['nama'] == "Limas Segitiga") {
+                      Navigator.push(context, animRoute.CustomPageRoute(goToLimasSegitiga));
+                    } else if (post['nama'] == "Tabung") {
+                      Navigator.push(context, animRoute.CustomPageRoute(goToTabung));
                     }else {
                       print("not found");
                     }

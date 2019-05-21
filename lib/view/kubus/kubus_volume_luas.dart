@@ -44,6 +44,7 @@ class _KubusState extends State<Kubus> {
         centerTitle: true,
         title:  Text("Kalkulator Bangun Ruang - Kubus"),
       ),
+      resizeToAvoidBottomPadding: false,
       body: SingleChildScrollView(
         child:  Container(
           padding: EdgeInsets.all(10.0),

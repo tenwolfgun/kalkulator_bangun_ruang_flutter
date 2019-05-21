@@ -1,39 +1,37 @@
 import 'package:flutter/material.dart';
 
-class LimasSegiempat extends StatefulWidget {
+class LimasSegitiga extends StatefulWidget {
   @override
-  _LimasSegiempatState createState() => _LimasSegiempatState();
+  _LimasSegitigaState createState() => _LimasSegitigaState();
 }
 
-class _LimasSegiempatState extends State<LimasSegiempat> {
-
-  TextEditingController _sisiController;
-  TextEditingController _tinggiController;
+class _LimasSegitigaState extends State<LimasSegitiga> {
+  TextEditingController _lsAlasController;
+  TextEditingController _lsSelubungController;
 
   @override
   void initState() {
-    _sisiController = TextEditingController();
-    _tinggiController = TextEditingController();
+    _lsAlasController = TextEditingController();
+    _lsSelubungController = TextEditingController();
     super.initState();
   }
 
   @override
   void dispose() {
-    _sisiController?.dispose();
-    _tinggiController?.dispose();
+    _lsAlasController?.dispose();
+    _lsSelubungController?.dispose();
     super.dispose();
   }
 
-  double _sisi = 0;
-  double _tinggi = 0;
   double _lsAlas = 0;
-  double _volume = 0;
+  double _lsSelubung = 0;
+  double _lsPermukaan = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Kalkulator Bangun Ruang - Limas Segiempat"),
+        title: Text("Kalkulator Bangun Ruang - Volume Limas Segitiga"),
         centerTitle: true,
       ),
       resizeToAvoidBottomPadding: false,
@@ -45,14 +43,14 @@ class _LimasSegiempatState extends State<LimasSegiempat> {
               Padding(
                 padding: EdgeInsets.only(bottom: 30.0, top: 10.0),
                 child: Center(
-                  child: Image.asset("img/limas-segiempat.png", width: 100.0),
+                  child: Image.asset("img/limas-segitiga.png", width: 100.0),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                 child: Text(
-                  "Volume Limas Segiempat",
-                  style: TextStyle(fontSize: 25.0)
+                  "Luas Permukaan Limas Segitiga",
+                  style: TextStyle(fontSize: 25.0),
                 ),
               ),
               Row(
@@ -62,11 +60,10 @@ class _LimasSegiempatState extends State<LimasSegiempat> {
                       padding: EdgeInsets.only(right: 10.0),
                       child: TextField(
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: "Sisi"
-                        ),
+                            border: OutlineInputBorder(),
+                            labelText: "Luas Alas"),
                         keyboardType: TextInputType.number,
-                        controller: _sisiController,
+                        controller: _lsAlasController,
                       ),
                     ),
                   ),
@@ -75,26 +72,27 @@ class _LimasSegiempatState extends State<LimasSegiempat> {
                       padding: EdgeInsets.only(right: 10.0),
                       child: TextField(
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: "Tinggi"
-                        ),
+                            border: OutlineInputBorder(),
+                            labelText: "Luas Selubung"),
                         keyboardType: TextInputType.number,
-                        controller: _tinggiController,
+                        controller: _lsSelubungController,
                       ),
                     ),
-                  ),
+                  )
                 ],
               ),
               Padding(
                 padding: EdgeInsets.only(top: 10.0),
                 child: RaisedButton(
-                  child: Text("Hitung", style: TextStyle(fontSize: 15.0)),
+                  child: Text(
+                    "Hitung",
+                    style: TextStyle(fontSize: 15.0),
+                  ),
                   onPressed: () {
                     setState(() {
-                     _sisi = double.parse(_sisiController.text);
-                     _tinggi = double.parse(_tinggiController.text);
-                     _lsAlas = _sisi * _sisi;
-                     _volume = 1/3 * _lsAlas * _tinggi;
+                      _lsAlas = double.parse(_lsAlasController.text);
+                      _lsSelubung = double.parse(_lsSelubungController.text);
+                      _lsPermukaan = _lsAlas + _lsSelubung;
                     });
                   },
                 ),
@@ -102,7 +100,7 @@ class _LimasSegiempatState extends State<LimasSegiempat> {
               Padding(
                 padding: EdgeInsets.only(bottom: 8.0, top: 8.0),
                 child: Text(
-                  "Volume Limas Segiempat: 1/3 * $_lsAlas * $_tinggi = $_volume",
+                  "Luas Permukaan Limas Segitiga: $_lsAlas + $_lsSelubung = $_lsPermukaan",
                   style: TextStyle(fontSize: 20.0),
                 ),
               )

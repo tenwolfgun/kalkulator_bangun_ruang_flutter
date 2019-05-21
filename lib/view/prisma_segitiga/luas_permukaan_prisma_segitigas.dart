@@ -42,6 +42,7 @@ class _PrismaSegitigaState extends State<PrismaSegitiga> {
         title: Text("Kalkulator Bangun Ruang - Prisma Segitiga"),
         centerTitle: true,
       ),
+      resizeToAvoidBottomPadding: false,
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(10.0),
@@ -143,7 +144,9 @@ class _PrismaSegitigaState extends State<PrismaSegitiga> {
               Padding(
                   padding: EdgeInsets.only(bottom: 8.0, top: 8.0),
                   child: Text(
-                      "Luas permukaan prisma segitiga : ($_alasSegitiga * $_tinggiSegitiga) + ($_kelilingAlas * $_tinggiPrisma) = $_lsPermukaan"))
+                    "Luas permukaan prisma segitiga : ($_alasSegitiga * $_tinggiSegitiga) + ($_kelilingAlas * $_tinggiPrisma) = $_lsPermukaan",
+                    style: TextStyle(fontSize: 20.0),
+                  ))
             ],
           ),
         ),

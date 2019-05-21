@@ -38,6 +38,7 @@ class _BalokState extends State<Balok> {
         title: Text("Kalkulator Bangun Ruang - Balok"),
         centerTitle: true,
       ),
+      resizeToAvoidBottomPadding: false,
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(10.0),

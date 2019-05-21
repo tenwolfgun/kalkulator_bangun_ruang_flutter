@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import './limas_segiempat/volume_limas_segiempat.dart' as vlLimasSegiempat;
 
-class NavLimasSegiempat extends StatefulWidget {
-  @override
-  _NavLimasSegiempat createState() => _NavLimasSegiempat();
-}
-
-class _NavLimasSegiempat extends State<NavLimasSegiempat> {
+class NavLimasSegiempat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
