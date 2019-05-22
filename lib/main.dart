@@ -7,6 +7,7 @@ import './view/nav_prisma_segitiga.dart' as halPrismaSegitiga;
 import './view/nav_limas_segiempat.dart' as halLimasSegiempat;
 import './view/nav_limas_segitiga.dart' as halLimasSegitiga;
 import './view/nav_tabung.dart' as halTabung;
+import './view/nav_kerucut.dart' as halKerucut;
 import './view/animation.dart' as animRoute;
 // import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
@@ -17,6 +18,7 @@ void main() {
     theme: new ThemeData(
       primarySwatch: Colors.blue,
     ),
+    debugShowCheckedModeBanner: false,
     // routes: <String, WidgetBuilder> {
     //   '/HalamanUtama': (BuildContext context) => new Home(),
     //   '/HalamanKubus': (BuildContext context) => new halKubus.NavKubus(),
@@ -39,6 +41,7 @@ class _HomeState extends State<Home> {
   final goToLimasSegiempat = halLimasSegiempat.NavLimasSegiempat();
   final goToLimasSegitiga  = halLimasSegitiga.NavLimasSegitiga();
   final goToTabung         = halTabung.NavTabung();
+  final goToKerucut        = halKerucut.NavKerucut();
 
   List<String> data;
 
@@ -50,6 +53,7 @@ class _HomeState extends State<Home> {
         title: Text(
           "Kalkulator Bangun Ruang"
         ),
+        backgroundColor: Colors.blue,
         actions: <Widget>[
           IconButton(
             icon: new Icon(Icons.language, color: Colors.white,),
@@ -90,6 +94,8 @@ class _HomeState extends State<Home> {
                       Navigator.push(context, animRoute.CustomPageRoute(goToLimasSegitiga));
                     } else if (post['nama'] == "Tabung") {
                       Navigator.push(context, animRoute.CustomPageRoute(goToTabung));
+                    } else if (post['nama'] == "Kerucut") {
+                      Navigator.push(context, animRoute.CustomPageRoute(goToKerucut));
                     }else {
                       print("not found");
                     }
