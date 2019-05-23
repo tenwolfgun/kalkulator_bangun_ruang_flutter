@@ -23,7 +23,7 @@ class _BolaState extends State<Bola> {
   }
 
   double _jari2 = 0;
-  double _volume = 0;
+  double _lsPermukaan = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class _BolaState extends State<Bola> {
               Padding(
                 padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
                 child: Text(
-                  "Volume Bola",
+                  "Luas Permukaan Bola",
                   style: TextStyle(fontSize: 25.0),
                 ),
               ),
@@ -77,7 +77,7 @@ class _BolaState extends State<Bola> {
                   onPressed: () {
                     setState(() {
                      _jari2 = double.parse(_jari2Controller.text);
-                     _volume =  4/3 * math.pi * math.pow(_jari2, 3);
+                     _lsPermukaan = 4 * math.pi * _jari2;
                     });
                   },
                 ),
@@ -85,7 +85,7 @@ class _BolaState extends State<Bola> {
               Padding(
                 padding: EdgeInsets.only(bottom: 8.0, top: 8.0),
                 child: Text(
-                  "4/3 * 3.14 * $_jari2 * $_jari2 * $_jari2 = $_volume",
+                  "4 * 3.14 * $_jari2 = $_lsPermukaan",
                   style: TextStyle(fontSize: 20.0),
                 ),
               )

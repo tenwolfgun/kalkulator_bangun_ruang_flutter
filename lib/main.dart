@@ -8,6 +8,7 @@ import './view/nav_limas_segiempat.dart' as halLimasSegiempat;
 import './view/nav_limas_segitiga.dart' as halLimasSegitiga;
 import './view/nav_tabung.dart' as halTabung;
 import './view/nav_kerucut.dart' as halKerucut;
+import './view/nav_bola.dart' as halBola;
 import './view/animation.dart' as animRoute;
 // import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
@@ -42,6 +43,7 @@ class _HomeState extends State<Home> {
   final goToLimasSegitiga  = halLimasSegitiga.NavLimasSegitiga();
   final goToTabung         = halTabung.NavTabung();
   final goToKerucut        = halKerucut.NavKerucut();
+  final goToBola           = halBola.NavBola();
 
   List<String> data;
 
@@ -96,6 +98,8 @@ class _HomeState extends State<Home> {
                       Navigator.push(context, animRoute.CustomPageRoute(goToTabung));
                     } else if (post['nama'] == "Kerucut") {
                       Navigator.push(context, animRoute.CustomPageRoute(goToKerucut));
+                    } else if (post['nama'] == "Bola") {
+                      Navigator.push(context, animRoute.CustomPageRoute(goToBola));
                     }else {
                       print("not found");
                     }
