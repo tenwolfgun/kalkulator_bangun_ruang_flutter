@@ -101,7 +101,7 @@ class _KerucutState extends State<Kerucut> {
               Padding(
                 padding: EdgeInsets.only(bottom: 8.0, top: 8.0),
                 child: Text(
-                  "Volume Kerucut: 1/3 * 3.14 * $_jari2 * $_jari2 * $_tinggi = $_volume",
+                  "1/3 * 3.14 * $_jari2 * $_jari2 * $_tinggi = $_volume",
                   style: TextStyle(fontSize: 20.0),
                 ),
               )

@@ -103,7 +103,7 @@ class _LimasSegitigaState extends State<LimasSegitiga> {
               Padding(
                 padding : EdgeInsets.only(bottom: 8.0, top: 8.0),
                 child: Text(
-                  "Volume Limas Segitiga: 1/3 * $_alas * $_tinggi = $_volume", style: TextStyle(fontSize: 20.0),),
+                  "1/3 * $_alas * $_tinggi = $_volume", style: TextStyle(fontSize: 20.0),),
               )
             ],
           ),

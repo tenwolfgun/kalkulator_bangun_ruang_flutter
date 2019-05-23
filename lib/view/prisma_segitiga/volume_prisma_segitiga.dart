@@ -116,7 +116,7 @@ class _PrismaSegitigaState extends State<PrismaSegitiga> {
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 8.0, top: 8.0),
-                child: Text("Volume prisma segitiga : (0.5 * $_alasSegitiga * $_tinggiSegitiga) * $_tinggiPrisma = $_volume", style: TextStyle(fontSize: 20.0),),
+                child: Text("(0.5 * $_alasSegitiga * $_tinggiSegitiga) * $_tinggiPrisma = $_volume", style: TextStyle(fontSize: 20.0),),
               )
             ],
           ),

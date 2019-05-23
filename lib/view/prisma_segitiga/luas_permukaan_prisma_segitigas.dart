@@ -144,7 +144,7 @@ class _PrismaSegitigaState extends State<PrismaSegitiga> {
               Padding(
                   padding: EdgeInsets.only(bottom: 8.0, top: 8.0),
                   child: Text(
-                    "Luas permukaan prisma segitiga : ($_alasSegitiga * $_tinggiSegitiga) + ($_kelilingAlas * $_tinggiPrisma) = $_lsPermukaan",
+                    "($_alasSegitiga * $_tinggiSegitiga) + ($_kelilingAlas * $_tinggiPrisma) = $_lsPermukaan",
                     style: TextStyle(fontSize: 20.0),
                   ))
             ],

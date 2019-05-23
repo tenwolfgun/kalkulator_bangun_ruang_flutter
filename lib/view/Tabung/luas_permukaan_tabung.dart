@@ -106,7 +106,7 @@ class _TabungState extends State<Tabung> {
               Padding(
                 padding: EdgeInsets.only(bottom: 8.0, top: 8.0),
                 child: Text(
-                  "Luas Permukaan Tabung: 2 * 3.14 * $_jari2 * ($_jari2 + $_tinggi) = $_lsPermukaan",
+                  "2 * 3.14 * $_jari2 * ($_jari2 + $_tinggi) = $_lsPermukaan",
                   style: TextStyle(fontSize: 20.0)
                 ),
               )

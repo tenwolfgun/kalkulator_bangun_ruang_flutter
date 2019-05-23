@@ -95,7 +95,7 @@ class _LimasSegiempatState extends State<LimasSegiempat> {
               Padding(
                 padding: EdgeInsets.only(bottom: 8.0, top: 8.0),
                 child: Text(
-                  "Luas Permukaan Limas Segiempat: $_lsAlas + $_lsSelubung = $_lsPermukaan",
+                  "$_lsAlas + $_lsSelubung = $_lsPermukaan",
                   style: TextStyle(fontSize: 20.0),
                 ),
               )
